@@ -1,0 +1,16 @@
+{
+  "name": "project-template",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "deploy": ""
+  },
+  "author": "Christopher Ouellette",
+  "license": "MIT",
+  "bin": "dist/index.js",
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
