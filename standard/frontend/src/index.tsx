@@ -1,12 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
+import App from "./App";
 import "./index.css";
 
-const root = createRoot(document.getElementById("root"));
+const root = createRoot(document.getElementById("root") as HTMLDivElement);
 root.render(
   <StrictMode>
-    <h1>Hello new project</h1>
+    <App />
   </StrictMode>
 );
 
