@@ -32,7 +32,6 @@
     "eslint-plugin-react": "^7.29.4",
     "firebase": "^9.8.1",
     "firebase-functions": "^3.21.2",
-    "googleapis": "^100.0.0",
     "jest": "^28.1.0",
     "opener": "^1.5.2",
     "prettier": "^2.6.2",

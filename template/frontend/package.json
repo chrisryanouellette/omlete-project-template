@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "main": "dist/index.js",
+  "main": "build/index.html",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
