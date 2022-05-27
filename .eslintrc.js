@@ -28,4 +28,12 @@ module.exports = {
       "@typescript-eslint/parser": [".ts"],
     },
   },
+  overrides: [
+    {
+      files: ["*.js"],
+      rules: {
+        "@typescript-eslint/no-var-requires": 0,
+      },
+    },
+  ],
 };
