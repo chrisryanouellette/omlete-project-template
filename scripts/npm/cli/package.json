@@ -1,0 +1,23 @@
+{
+  "name": "@omlette-project-template/package-updates",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/index.hmtl",
+  "scripts": {
+    "build": "tsc --project ./tsconfig.json",
+    "build:watch": "tsc --project ./tsconfig.json --watch --sourceMap",
+    "run": "node dist/npm/cli/npm.js",
+    "run:debug": "nodemon --watch dist/npm/src --inspect-brk dist/npm/cli/npm.js",
+    "test": "jest --config ./test/jest.config.npm.js",
+    "test:watch": "yarn test --watch",
+    "test:coverage": "yarn test --coverage",
+    "test:coverage:view": "yarn test:coverage --watchAll=false && yarn opener ./coverage/lcov-report/index.html",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch --config ./test/jest.config.common.js"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.0"
+  },
+  "dependencies": {
+    "@omlette-project-template/utilities": "0.0.1"
+  }
+}

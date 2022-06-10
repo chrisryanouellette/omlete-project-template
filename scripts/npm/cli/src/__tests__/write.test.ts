@@ -1,9 +1,9 @@
 import { resolve } from "path";
-import { writeFile, mkdir } from "../../utilities/file";
+import { writeFile, mkdir } from "@omlette-project-template/utilities/node";
 import { writeDataToFile } from "../write";
-import { comparisons, packages, repos } from "./data";
+import { comparisons, packages, repos } from "../data";
 
-jest.mock("../../utilities/file.ts");
+jest.mock("@omlette-project-template/utilities/node");
 const writeFileMock = writeFile as jest.MockedFunction<typeof writeFile>;
 const mkdirMock = mkdir as jest.MockedFunction<typeof mkdir>;
 

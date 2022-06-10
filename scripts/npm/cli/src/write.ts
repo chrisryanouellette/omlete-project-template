@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import { mkdir, writeFile } from "../utilities/file";
+import { mkdir, writeFile } from "@omlette-project-template/utilities/node";
 import { NpmComparison, NpmPackage, PackageJson } from "./types";
 
 const writeDataToFile = async (

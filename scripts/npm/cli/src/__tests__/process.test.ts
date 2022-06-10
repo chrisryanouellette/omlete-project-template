@@ -1,5 +1,5 @@
 import { processPackageData } from "../process";
-import { packages, repos } from "./data";
+import { packages, repos } from "../data";
 
 it("Processes the package JSON data and NPM responses", () => {
   const results = processPackageData(repos, packages);

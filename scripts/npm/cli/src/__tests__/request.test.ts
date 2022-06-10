@@ -1,8 +1,8 @@
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { requestPackageData } from "../request";
-import { NpmPackageResponse, PackageJson } from "../types";
-import { repos } from "./data";
+import { NpmPackageResponse } from "../types";
+import { repos } from "../data";
 
 const server = setupServer(
   rest.get("https://api.npms.io/v2/package/:name", (req, res, ctx) => {

@@ -1,14 +1,15 @@
 import { resolve } from "path";
-import { readFile } from "../utilities/file";
+import { readFile } from "@omlette-project-template/utilities/node";
 import { Dependencies, PackageJson } from "./types";
 
 const loadPackageJsonFiles = async (): Promise<PackageJson> => {
   const basePath = process.cwd();
   const [common, frontend, backend] = await Promise.allSettled([
-    readFile(resolve(basePath, "template/package.json")),
-    readFile(resolve(basePath, "template/frontend/package.json")),
-    readFile(resolve(basePath, "template/backend/package.json")),
+    readFile(resolve(basePath, "../../template/package.json")),
+    readFile(resolve(basePath, "../../template/frontend/package.json")),
+    readFile(resolve(basePath, "../../template/backend/package.json")),
   ]);
+
   if (
     common.status === "rejected" ||
     frontend.status === "rejected" ||

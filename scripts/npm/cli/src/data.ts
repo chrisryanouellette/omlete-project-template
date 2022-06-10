@@ -1,4 +1,4 @@
-import { NpmComparison, NpmPackage, PackageJson } from "../types";
+import { NpmComparison, NpmPackage, PackageJson } from "./types";
 
 export const repos: PackageJson = {
   common: {

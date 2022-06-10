@@ -1,5 +1,5 @@
-import { keyInObj } from "../utilities";
-import { get } from "../utilities/http";
+import { keyInObj } from "@omlette-project-template/utilities/common";
+import { get } from "@omlette-project-template/utilities/node";
 import { NpmPackage, NpmPackageResponse, PackageJson } from "./types";
 
 const requestPackageData = async (

@@ -1,4 +1,4 @@
-import { keyInObj } from "../utilities";
+import { keyInObj } from "@omlette-project-template/utilities/common";
 import { NpmComparison, NpmPackage, PackageJson } from "./types";
 
 const processPackageData = (

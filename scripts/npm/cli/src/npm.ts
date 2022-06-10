@@ -1,6 +1,7 @@
 import { loadPackageJsonFiles } from "./load";
 import { processPackageData } from "./process";
 import { requestPackageData } from "./request";
+import { startHttpServer } from "./serve";
 import { writeDataToFile } from "./write";
 
 (async (): Promise<void> => {
@@ -9,7 +10,7 @@ import { writeDataToFile } from "./write";
     const packages = await requestPackageData(packagesJsons);
     const comparison = processPackageData(packagesJsons, packages);
     await writeDataToFile(packagesJsons, packages, comparison);
-    // await startHttpServer();
+    await startHttpServer();
     process.exit(0);
   } catch (error) {
     console.error(error);
