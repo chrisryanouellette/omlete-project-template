@@ -17,6 +17,16 @@ From the root directory, all scripts can be run with `yarn frontend [Script Name
 - `yarn test:coverage` - Creates a coverage report from Jest for the frontend and backend projects.
 - `yarn lint` - Runs the lint scripts for the frontend and backend projects.
 
+## Adding Packages
+
+### To the Root
+
+Run command `yarn add -W [-D?] [Package Name]` and the package will be added to the root of the monorepo.
+
+### To a Mono Repo
+
+Run command `yarn workspace [Workspace Name] add [-D?][Package Name]` and the package will be installed in the workspace specified.
+
 ## Debugging w/ Jest
 
 Both the frontend and backend repos can be debugged with Jest using the Chrome Debugger.
