@@ -22,6 +22,7 @@ module.exports = {
   plugins: ["@typescript-eslint"],
   rules: {
     "@typescript-eslint/explicit-function-return-type": 2,
+    "valid-jsdoc": 0,
   },
   settings: {
     "import/parsers": {
