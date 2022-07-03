@@ -1,8 +1,8 @@
 #! /usr/bin/env node
 
+import constants from "./config.json";
 import args from "./utilities/args";
 import { ask, askOptions, askYesOrNo } from "./utilities/ask";
-import constants from "./config.json";
 
 (async (): Promise<void> => {
   const argv = args();
