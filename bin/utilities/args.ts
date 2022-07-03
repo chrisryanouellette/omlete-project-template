@@ -1,5 +1,5 @@
 import { hasKey } from ".";
-import constants from "../constant.json";
+import constants from "../config.json";
 
 type CliOptions = typeof constants.cliOpts;
 type ArgsReturn = { [K in keyof CliOptions]: CliOptions[K]["default"] };
