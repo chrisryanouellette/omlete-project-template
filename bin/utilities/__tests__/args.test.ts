@@ -6,8 +6,8 @@ describe("The args utility:", () => {
     const argv = args();
     expect(argv).toMatchInlineSnapshot(`
       Object {
-        "install": true,
-        "interactive": false,
+        "install": "true",
+        "interactive": "false",
         "project": "test",
         "template": "frontend",
       }
@@ -19,8 +19,8 @@ describe("The args utility:", () => {
     const argv = args();
     expect(argv).toMatchInlineSnapshot(`
       Object {
-        "install": true,
-        "interactive": false,
+        "install": "true",
+        "interactive": "false",
         "project": "project-template",
         "template": "web",
       }
