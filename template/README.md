@@ -16,3 +16,13 @@ From the root directory, all scripts can be run with `yarn frontend [Script Name
 - `yarn test` - Runs the test scripts for the frontend and backend projects.
 - `yarn test:coverage` - Creates a coverage report from Jest for the frontend and backend projects.
 - `yarn lint` - Runs the lint scripts for the frontend and backend projects.
+
+## Debugging w/ Jest
+
+Both the frontend and backend repos can be debugged with Jest using the Chrome Debugger.
+
+1. Begin by running `yarn [Workspace Name] test:watch`. This will start the watch script and attach a debugger to Chrome.
+2. Open Chrome and go to this url `chrome://inspect`.
+3. Click the `Open dedicated DevTools for Node` link and a Chrome Dev Tool window will open.
+
+As the tests run and encounter `debugger` statements, the dev tools will stop and give you a similar debugging experience as you are used to when creating frontend apps.

@@ -13,10 +13,11 @@
     "bundle": "yarn bundle:stats && yarn bundle:view",
     "bundle:stats": "react-scripts build --stats",
     "bundle:view": "webpack-bundle-analyzer --mode static --report build/bundle-stats.html build/bundle-stats.json",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
+    "test:watch": "react-scripts test",
     "test:coverage": "yarn test --coverage",
     "test:coverage:view": "yarn test:coverage --watchAll=false && yarn opener ./coverage/lcov-report/index.html",
-    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
+    "test:debug": "react-scripts --inspect-brk test --runInBand",
     "lint": "yarn tsc && yarn eslint",
     "tsc": "tsc --noemit",
     "eslint": "eslint --ignore-path ../.gitignore --ext ts,tsx -c ./.eslintrc.js",
@@ -62,7 +63,7 @@
   "jest": {
     "displayName": "frontend",
     "moduleNameMapper": {
-      "\\.(css|less|mdx)$": "./src/__mocks__/mockImports.js"
+      "\\.(css|less|mdx)$": "<rootDir>/src/__mocks__/mockImports.js"
     },
     "collectCoverageFrom": [
       "**/src/**/*.{js,jsx,ts,tsx}",

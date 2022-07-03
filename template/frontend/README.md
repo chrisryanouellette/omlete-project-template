@@ -16,5 +16,12 @@ From the root directory, all scripts can be run with `yarn frontend [Script Name
 - `yarn eslint:fix` - Runs the code through EsLint and fixes any issues.
 - `yarn format:fix` - Runs the code through Prettier and fixes any formatting issues.
 
-
 ## Debugging in Jest
+
+Below are the steps to begin debugging using Jest in Chrome Dev Tools.
+
+1. Begin by running `yarn frontend test:watch` from the root of the project. This will start the watch script and attach a debugger to Chrome.
+2. Open Chrome and go to this url `chrome://inspect`.
+3. Click the `Open dedicated DevTools for Node` link and a Chrome Dev Tool window will open.
+
+As the tests run and encounter `debugger` statements, the dev tools will stop and give you a similar debugging experience as you are used to when creating frontend apps.
