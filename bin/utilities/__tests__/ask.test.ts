@@ -18,11 +18,11 @@ jest.mock("readline", () => ({
 
 const question = "TEST";
 
-afterAll(() => {
-  jest.resetAllMocks();
-});
 afterEach(() => {
   jest.clearAllMocks();
+});
+afterAll(() => {
+  jest.restoreAllMocks();
 });
 
 describe("The ask utility:", () => {

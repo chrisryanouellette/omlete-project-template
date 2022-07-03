@@ -20,19 +20,10 @@ exitMock.mockImplementation((() => {}) as never);
 errorLogMock.mockImplementation(() => {});
 
 import "../prerun";
+import { handleMocks } from "../tests";
 
 describe("The prerun utility:", () => {
-  afterEach(() => {
-    argsMock.mockClear();
-    exitMock.mockClear();
-    errorLogMock.mockClear();
-  });
-
-  afterAll(() => {
-    argsMock.mockReset();
-    exitMock.mockReset();
-    errorLogMock.mockReset();
-  });
+  handleMocks(argsMock, exitMock, errorLogMock);
 
   it("should call the args function", () => {
     expect(argsMock).toHaveBeenCalledTimes(1);
