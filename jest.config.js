@@ -27,7 +27,11 @@ module.exports = {
 
   // Will include all files that match the pattern(s) below
   // This includes files that do not have tests written for them
-  collectCoverageFrom: ["./bin/**/*.ts", "!./bin/**/*.test.ts"],
+  collectCoverageFrom: [
+    "./bin/**/*.ts",
+    "!./bin/**/*.test.ts",
+    "!./bin/tests/**",
+  ],
 
   // This ensures a certain amount of coverage is met
   // If not, the script exits with a failure code 1
