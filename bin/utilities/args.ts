@@ -2,13 +2,13 @@ import constants from "../config.json";
 import { hasKey } from ".";
 
 type CliOptions = typeof constants.cliOpts;
-type ArgsReturn = { [K in keyof CliOptions]: CliOptions[K]["default"] };
+export type Args = { [K in keyof CliOptions]: CliOptions[K]["default"] };
 const cliOpts = constants.cliOpts;
 
 /** Returns the arguments passed to the CLI as an object */
-const args = (): ArgsReturn => {
+const args = (): Args => {
   const argv = process.argv;
-  const args: ArgsReturn = {
+  const args: Args = {
     template: cliOpts.template.default,
     project: cliOpts.project.default,
     install: cliOpts.install.default,
@@ -56,11 +56,10 @@ const args = (): ArgsReturn => {
     switch (arg) {
       case "install":
       case "interactive": {
-        args[arg] = !hasValue ? true : value === "true";
+        args[arg] = !hasValue ? "true" : value.toString();
         break;
       }
-      case "project":
-      case "template": {
+      default: {
         args[arg] = value;
         break;
       }

@@ -1,36 +1,49 @@
 #! /usr/bin/env node
 
 import constants from "./config.json";
-import args from "./utilities/args";
 import { ask, askOptions, askYesOrNo } from "./utilities/ask";
+import "./prerun";
 
-(async (): Promise<void> => {
-  const argv = args();
+const main = async (): Promise<void> => {
+  const env = process.env;
 
-  if (argv.interactive) {
-    try {
-      argv.template = await askOptions(
-        "What kind of template would you like to use?",
-        constants.cliOpts.template.options
-      );
+  if (env.interactive) {
+    env.template = await askOptions(
+      "What kind of template would you like to use?",
+      constants.cliOpts.template.options
+    );
 
-      argv.project = await ask(
-        "What is the name of your project? Default: my-project"
-      );
+    env.project = await ask(
+      "What is the name of your project? Default: my-project"
+    );
 
-      if (!argv.project) {
-        argv.project = constants.cliOpts.project.default;
-      }
-
-      argv.install = await askYesOrNo(
-        "Would you like to install the dependencies?"
-      );
-    } catch (error) {
-      console.error(error);
-      process.exit(1);
+    if (!env.project) {
+      env.project = constants.cliOpts.project.default;
     }
-  }
-  console.log(argv);
 
-  process.exit(0);
-})();
+    env.install = (
+      await askYesOrNo("Would you like to install the dependencies?")
+    ).toString();
+  }
+
+  if (/[A-Z ]/g.test(env.project)) {
+    throw new Error(
+      "Project names should only contain lower case letters and underscores or dashes."
+    );
+  }
+
+  console.log(process.env);
+};
+
+// The main process
+main()
+  .then(() => {
+    // The end of the script
+    console.info("Process done! May the types be with you!");
+    process.exit(0);
+  })
+  .catch((error) => {
+    // Will catch any errors that come out of the script
+    console.error(error);
+    process.exit(1);
+  });

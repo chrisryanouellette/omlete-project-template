@@ -9,10 +9,10 @@
     },
     "install": {
       "options": ["true", "false"],
-      "default": true
+      "default": "true"
     },
     "interactive": {
-      "default": false
+      "default": "false"
     }
   },
   "ignoreFolders": ["node_modules", "coverage", "dist", "lib"]
