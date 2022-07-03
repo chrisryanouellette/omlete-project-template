@@ -30,7 +30,10 @@ describe("The ask utility:", () => {
     questionMock.mockImplementationOnce(questionFn(question));
     await ask(question);
     expect(questionMock).toHaveBeenCalledTimes(1);
-    expect(questionMock).toHaveBeenCalledWith(question, expect.any(Function));
+    expect(questionMock).toHaveBeenCalledWith(
+      `${question}\n`,
+      expect.any(Function)
+    );
   });
 
   it("should receive an answer", async () => {
@@ -71,8 +74,9 @@ describe("The askOptions utility:", () => {
 describe("The askYesOrNo utility:", () => {
   it("should accept an answer if it is either y or n", async () => {
     questionMock.mockImplementationOnce(questionFn("Y"));
-    const answer = await askYesOrNo(question);
-    expect(answer).toBe("y");
+    expect(await askYesOrNo(question)).toBe(true);
+    questionMock.mockImplementationOnce(questionFn("N"));
+    expect(await askYesOrNo(question)).toBe(false);
   });
 
   it("should throw if it is not answered with either y or n", async () => {
