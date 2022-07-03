@@ -12,7 +12,12 @@
     "eslint:check": "yarn eslint bin/",
     "eslint:fix": "yarn eslint --fix bin/",
     "format": "prettier './bin/**'",
-    "format:write": "prettier --write './bin/**'"
+    "format:write": "prettier --write './bin/**'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "yarn test --coverage",
+    "test:coverage:view": "yarn test:coverage --watchAll=false && yarn opener ./coverage/lcov-report/index.html",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch"
   },
   "author": "Christopher Ouellette",
   "license": "MIT",
@@ -28,7 +33,11 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "jest": "^28.1.0",
+    "jest-watch-typeahead": "^1.1.0",
+    "nodemon": "^2.0.18",
+    "opener": "^1.5.2",
     "prettier": "^2.6.2",
+    "ts-jest": "^28.0.5",
     "typescript": "^4.6.4"
   }
 }
