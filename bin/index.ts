@@ -7,7 +7,7 @@ import "./prerun";
 const main = async (): Promise<void> => {
   const env = process.env;
 
-  if (env.interactive) {
+  if (env.interactive === "true") {
     env.template = await askOptions(
       "What kind of template would you like to use?",
       constants.cliOpts.template.options
