@@ -36,6 +36,11 @@
   },
   "jest": {
     "displayName": "backend",
+    "testEnvironment": "jest-environment-node",
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ],
     "collectCoverageFrom": [
       "**/src/**/*.{js,ts}",
       "!**/node_modules/",
