@@ -1,10 +1,14 @@
 #! /usr/bin/env node
 
-import constants from "./config.json";
+import { resolve } from "path";
 import { ask, askOptions, askYesOrNo } from "./utilities/ask";
+import { mkdir } from "./utilities/file/dir";
+import constants from "./config.json";
 import "./prerun";
 
 const main = async (): Promise<void> => {
+  // Interactive Section
+
   const env = process.env;
 
   if (env.interactive === "true") {
@@ -32,7 +36,11 @@ const main = async (): Promise<void> => {
     );
   }
 
-  console.log(process.env);
+  // Begin writing files
+
+  const dir = resolve(process.cwd(), env.project);
+
+  await mkdir(dir);
 };
 
 // The main process
