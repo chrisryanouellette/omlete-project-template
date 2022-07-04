@@ -15,5 +15,5 @@
       "default": "false"
     }
   },
-  "ignoreFolders": ["node_modules", "coverage", "dist", "lib"]
+  "ignoreFolders": ["node_modules", "coverage", "dist", "lib", "build"]
 }
