@@ -1,4 +1,4 @@
-# [Template]
+# [TEMPLATE]
 
 For information on the frontend see [README.md](./frontend/README.md) file.
 
