@@ -1,4 +1,4 @@
-# [TEMPLATE] Frontend
+# [PROJECT] Frontend
 
 
 ## Scripts

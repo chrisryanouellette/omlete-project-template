@@ -1,12 +1,9 @@
 {
-  "name": "[TEMPLATE]",
+  "name": "[PROJECT]",
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "workspaces": [
-    "frontend",
-    "backend"
-  ],
+  "workspaces": ["frontend", "backend"],
   "scripts": {
     "frontend": "yarn workspace frontend run",
     "backend": "yarn workspace backend run",
