@@ -3,6 +3,15 @@ import config from "../../config.json";
 import { mkdir, readDir } from "./dir";
 import { copyFile } from "./write";
 
+const readWrite = async (src: string, dest: string): Promise<void> => {
+  const items = await readDir(resolve(src));
+  for (const item of items) {
+    if (item.isFile()) {
+      await copyFile(resolve(src, item.name), resolve(dest, item.name));
+    }
+  }
+};
+
 const deepReadWrite = async (src: string, dest: string): Promise<void> => {
   const items = await readDir(resolve(src));
   for (const item of items) {
@@ -20,4 +29,4 @@ const deepReadWrite = async (src: string, dest: string): Promise<void> => {
   }
 };
 
-export { deepReadWrite };
+export { readWrite, deepReadWrite };

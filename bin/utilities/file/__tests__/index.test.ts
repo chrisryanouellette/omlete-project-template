@@ -1,9 +1,12 @@
 import { resolve } from "path";
 import { Dirent } from "fs";
-import { deepReadWrite } from "..";
+import { readWrite, deepReadWrite } from "..";
 import { mkdir, readDir } from "../dir";
 import { copyFile } from "../write";
 import { handleMocks } from "../../../tests";
+
+const src = "/src";
+const dest = "/dest";
 
 jest.mock("../dir");
 jest.mock("../write");
@@ -15,7 +18,6 @@ const readDirMock = readDir as jest.MockedFunction<typeof readDir>;
 readDirMock.mockResolvedValue([]);
 
 const copyFileMock = copyFile as jest.MockedFunction<typeof copyFile>;
-copyFileMock.mockResolvedValue();
 
 const getDirent = (dir = false, file = false): Dirent =>
   ({
@@ -24,12 +26,25 @@ const getDirent = (dir = false, file = false): Dirent =>
     name: "test",
   } as Dirent);
 
+handleMocks(mkdirMock, readDirMock, copyFileMock);
+
+describe("The readWrite utility:", () => {
+  it("should copy a file to a new destination", async () => {
+    const dirent = getDirent(false, true);
+    readDirMock.mockResolvedValueOnce([dirent]);
+    await readWrite(src, dest);
+
+    expect(readDirMock).toHaveBeenCalledTimes(1);
+    expect(readDirMock).toHaveBeenCalledWith(src);
+    expect(copyFileMock).toHaveBeenCalledTimes(1);
+    expect(copyFileMock).toHaveBeenCalledWith(
+      resolve(src, dirent.name),
+      resolve(dest, dirent.name)
+    );
+  });
+});
+
 describe("The deepReadWrite utility:", () => {
-  const src = __dirname;
-  const dest = __dirname;
-
-  handleMocks(mkdirMock, readDirMock, copyFileMock);
-
   it("should copy a file to a new destination", async () => {
     await deepReadWrite(src, dest);
     expect(readDirMock).toHaveBeenCalledTimes(1);
