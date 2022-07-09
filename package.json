@@ -4,9 +4,9 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "develop": "yarn develop:code & yarn develop:debug",
-    "develop:code": "tsc --watch",
-    "develop:debug": "nodemon --inspect-brk ./dist/index.js",
+    "develop": "yarn develop:watch & yarn develop:debug",
+    "develop:watch": "tsc --watch",
+    "develop:debug": "nodemon --watch ./dist --inspect ./dist/index.js",
     "build": "yarn lint && yarn build:code",
     "build:code": "tsc",
     "deploy": "yarn deploy:check && yarn deploy:code",
