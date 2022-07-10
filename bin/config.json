@@ -1,7 +1,7 @@
 {
   "cliOpts": {
     "template": {
-      "options": ["frontend", "backend", "web", "native"],
+      "options": ["frontend", "backend", "mobile", "web", "native"],
       "default": "web"
     },
     "project": {
@@ -19,5 +19,10 @@
       "default": "false"
     }
   },
-  "ignoreFolders": ["node_modules", "coverage", "dist", "lib", "build"]
+  "replaceInFile": ["project"],
+  "ignoreFolders": ["node_modules", "coverage", "dist", "lib", "build"],
+  "templateAlias": {
+    "web": ["frontend", "backend"],
+    "native": ["mobile", "backend"]
+  }
 }
