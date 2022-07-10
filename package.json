@@ -8,7 +8,7 @@
     "develop:watch": "tsc --watch",
     "develop:debug": "nodemon --watch ./dist --inspect ./dist/index.js",
     "build": "yarn lint && yarn build:code",
-    "build:code": "tsc",
+    "build:code": "tsc --project ./tsconfig.prod.json",
     "deploy": "yarn deploy:check && yarn deploy:code",
     "deploy:check": "yarn lint && yarn test:coverage",
     "deploy:code": "",
