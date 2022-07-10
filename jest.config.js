@@ -39,10 +39,10 @@ module.exports = {
   // The goal is for each value below to be at least 90
   coverageThreshold: {
     global: {
-      statements: 0,
-      branches: 0,
-      functions: 0,
-      lines: 0,
+      statements: 65,
+      branches: 60,
+      functions: 75,
+      lines: 65,
     },
   },
 };
