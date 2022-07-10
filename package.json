@@ -6,6 +6,7 @@
   "bin": "dist/index.js",
   "author": "Christopher Ouellette",
   "license": "MIT",
+  "private": false,
   "scripts": {
     "develop": "yarn develop:watch & yarn develop:debug",
     "develop:watch": "tsc --watch",
