@@ -10,7 +10,7 @@
   "scripts": {
     "develop": "yarn develop:watch & yarn develop:debug",
     "develop:watch": "tsc --watch",
-    "develop:debug": "nodemon --watch ./dist --inspect ./dist/index.js",
+    "develop:debug": "nodemon --watch ./dist --inspect-brk ./dist/index.js",
     "build": "yarn lint && yarn build:code",
     "build:code": "tsc --project ./tsconfig.prod.json",
     "deploy": "yarn deploy:check && yarn deploy:code",
