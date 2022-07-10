@@ -1,0 +1,15 @@
+bin
+coverage
+__tests__
+__mocks__
+node_modules
+
+project-template.code-workspace
+tsconfig.json
+jest.config.js
+.prettierrc.json
+,gitignore
+
+# Project Folders
+template/frontend/build/**
+template/backend/lib/**
