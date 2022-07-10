@@ -54,8 +54,11 @@ const main = async (): Promise<void> => {
   const fsPromises: Promise<void>[] = [];
 
   await mkdir(dest);
+  await mkdir(resolve(dest, ".vscode"));
 
+  /** @TODO improve this to include .vscode folder ( or any non-template folder ) */
   fsPromises.push(readWrite(src, dest));
+  fsPromises.push(readWrite(resolve(src, ".vscode"), resolve(dest, ".vscode")));
 
   /** Write template files */
   for (const template of templates) {
