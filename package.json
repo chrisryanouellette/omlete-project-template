@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
+  "bin": "dist/index.js",
+  "author": "Christopher Ouellette",
+  "license": "MIT",
   "scripts": {
     "develop": "yarn develop:watch & yarn develop:debug",
     "develop:watch": "tsc --watch",
@@ -26,9 +29,6 @@
     "test:coverage:view": "yarn test:coverage --watchAll=false && yarn opener ./coverage/lcov-report/index.html",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch"
   },
-  "author": "Christopher Ouellette",
-  "license": "MIT",
-  "bin": "dist/index.js",
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
