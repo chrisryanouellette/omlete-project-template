@@ -8,6 +8,7 @@ argsMock.mockReturnValue({
   template: config.cliOpts.template.default,
   project: config.cliOpts.project.default,
   install: config.cliOpts.install.default,
+  git: config.cliOpts.git.default,
   interactive: config.cliOpts.interactive.default,
 });
 

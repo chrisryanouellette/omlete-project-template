@@ -12,6 +12,7 @@ describe("The args utility:", () => {
     const argv = args();
     expect(argv).toMatchInlineSnapshot(`
       Object {
+        "git": "false",
         "install": "false",
         "interactive": "false",
         "project": "test",
@@ -24,6 +25,7 @@ describe("The args utility:", () => {
     const argv = args();
     expect(argv).toMatchInlineSnapshot(`
       Object {
+        "git": "false",
         "install": "true",
         "interactive": "false",
         "project": "project-template",
@@ -37,6 +39,7 @@ describe("The args utility:", () => {
     const argv = args();
     expect(argv).toMatchInlineSnapshot(`
       Object {
+        "git": "false",
         "install": "true",
         "interactive": "true",
         "project": "project-template",

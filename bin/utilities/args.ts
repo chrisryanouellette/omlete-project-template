@@ -12,6 +12,7 @@ const args = (): Args => {
     template: cliOpts.template.default,
     project: cliOpts.project.default,
     install: cliOpts.install.default,
+    git: cliOpts.git.default,
     interactive: cliOpts.interactive.default,
   };
 

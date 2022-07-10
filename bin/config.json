@@ -11,6 +11,10 @@
       "options": ["true", "false"],
       "default": "true"
     },
+    "git": {
+      "options": ["true", "false"],
+      "default": "false"
+    },
     "interactive": {
       "default": "false"
     }
