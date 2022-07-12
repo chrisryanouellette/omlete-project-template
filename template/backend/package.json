@@ -5,7 +5,7 @@
   "private": true,
   "main": "lib/index.js",
   "scripts": {
-    "start": "yarn build:watch & yarn serve",
+    "develop": "yarn build:watch & yarn serve",
     "build": "tsc",
     "build:watch": "tsc --watch",
     "serve": "yarn build && firebase emulators:start --only functions",
