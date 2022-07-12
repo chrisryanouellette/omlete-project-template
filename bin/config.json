@@ -1,7 +1,7 @@
 {
   "cliOpts": {
     "template": {
-      "options": ["frontend", "backend", "mobile", "web", "native"],
+      "options": ["frontend", "backend", "mobile", "web", "native", "bin"],
       "default": "web"
     },
     "project": {

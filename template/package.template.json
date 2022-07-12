@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "workspaces": ["frontend", "backend"],
+  "workspaces": ["frontend", "backend", "cli"],
   "scripts": {
     "frontend": "yarn workspace frontend run",
     "backend": "yarn workspace backend run",

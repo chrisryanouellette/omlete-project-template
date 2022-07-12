@@ -1,0 +1,34 @@
+{
+  "name": "cli",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "bin": "./dist/index.js",
+  "scripts": {
+    "develop": "yarn develop:watch & yarn develop:debug",
+    "develop:watch": "tsc --watch",
+    "develop:debug": "nodemon --watch ./dist --inspect-brk ./dist/index.js",
+    "build": "yarn lint && yarn build:code",
+    "build:code": "tsc --project ./tsconfig.prod.json",
+    "deploy": "yarn deploy:check && yarn deploy:code",
+    "deploy:check": "yarn lint && yarn test:coverage",
+    "deploy:code": "npm publish",
+    "deploy:test": "npm pack",
+    "code:run": "node ./dist/index.js",
+    "lint": "yarn tsc && yarn eslint:check",
+    "tsc": "tsc --noemit",
+    "eslint": "eslint --ignore-path .gitignore --ext ts -c ./bin/.eslintrc.js",
+    "eslint:check": "yarn eslint bin/",
+    "eslint:fix": "yarn eslint --fix bin/",
+    "format": "prettier './bin/**'",
+    "format:write": "prettier --write './bin/**'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "yarn test --coverage",
+    "test:coverage:view": "yarn test:coverage --watchAll=false && yarn opener ./coverage/lcov-report/index.html",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
