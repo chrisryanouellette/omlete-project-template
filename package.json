@@ -25,7 +25,7 @@
     "lint": "yarn tsc && yarn eslint:check",
     "tsc": "tsc --noemit",
     "eslint": "eslint --ignore-path .gitignore --ext ts -c ./bin/.eslintrc.js",
-    "eslint:check": "yarn eslint bin/",
+    "eslint:check": "yarn eslint --fix-dry-run bin/",
     "eslint:fix": "yarn eslint --fix bin/",
     "format": "prettier './bin/**'",
     "format:write": "prettier --write './bin/**'",
