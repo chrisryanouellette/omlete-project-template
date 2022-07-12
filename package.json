@@ -17,7 +17,7 @@
     "develop:debug": "nodemon --watch ./dist --inspect-brk ./dist/index.js",
     "build": "yarn lint && yarn build:code",
     "build:code": "tsc --project ./tsconfig.prod.json",
-    "deploy": "yarn deploy:check && yarn deploy:code",
+    "deploy": "yarn build:code && yarn deploy:check && yarn deploy:code",
     "deploy:check": "yarn lint && yarn test:coverage",
     "deploy:code": "npm publish",
     "deploy:test": "npm pack",
