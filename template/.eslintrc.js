@@ -9,6 +9,8 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "google",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:jest/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -22,6 +24,7 @@ module.exports = {
   plugins: ["@typescript-eslint"],
   rules: {
     "@typescript-eslint/explicit-function-return-type": 2,
+    "import/order": 2,
   },
   settings: {
     "import/parsers": {
