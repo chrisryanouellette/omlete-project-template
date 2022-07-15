@@ -8,7 +8,6 @@ project-template.code-workspace
 tsconfig.json
 jest.config.js
 .prettierrc.json
-!template/.gitignore
 
 # Project Folders
 template/frontend/build/**

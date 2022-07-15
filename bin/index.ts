@@ -6,6 +6,7 @@ import { hasKey } from "./utilities";
 import { mkdir } from "./utilities/file/dir";
 import { deepReadWrite, readWrite } from "./utilities/file";
 import { findAndReplace } from "./utilities/file/replace";
+import { rename } from "./utilities/file/rename";
 import { exec } from "./utilities/exec";
 import config from "./config.json";
 import "./prerun";
@@ -76,7 +77,7 @@ const main = async (): Promise<void> => {
   await Promise.all(fsPromises);
 
   /** Rename files and rewrite file contents */
-
+  await rename(`${dest}/gitignore`, `${dest}/.gitignore`);
   await findAndReplace(dest);
 
   /** Install dependencies */
