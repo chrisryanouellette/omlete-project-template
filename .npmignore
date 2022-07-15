@@ -6,6 +6,9 @@ node_modules
 
 project-template.code-workspace
 tsconfig.json
+tsconfig.prod.json
+!template/**/tsconfig.json
+!template/**/tsconfig.prod.json
 jest.config.js
 .prettierrc.json
 
