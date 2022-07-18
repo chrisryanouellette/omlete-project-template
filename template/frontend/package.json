@@ -20,8 +20,9 @@
     "test:debug": "react-scripts --inspect-brk test --runInBand",
     "lint": "yarn tsc && yarn eslint",
     "tsc": "tsc --noemit",
-    "eslint": "eslint --ignore-path ../.gitignore --ext ts,tsx -c ./.eslintrc.js",
-    "eslint:check": "yarn eslint src/",
+    "eslint": "yarn eslint:base src/",
+    "eslint:base": "eslint --ignore-path ../.gitignore --ext ts,tsx -c ./.eslintrc.js",
+    "eslint:check": "yarn eslint --fix-dry-run src/",
     "eslint:fix": "yarn eslint --fix src/",
     "format": "prettier './src/**'",
     "format:fix": "prettier --write './src/**'"

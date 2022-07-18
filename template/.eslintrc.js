@@ -3,9 +3,6 @@ module.exports = {
   env: {
     node: true,
   },
-  globals: {
-    "jest/globals": true,
-  },
   extends: [
     "eslint:recommended",
     "google",
