@@ -18,7 +18,6 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint"],
   rules: {
     "@typescript-eslint/explicit-function-return-type": 2,
     "import/order": 2,

@@ -13,7 +13,6 @@ module.exports = {
     "plugin:testing-library/react",
     "../.eslintrc.js",
   ],
-  plugins: ["react"],
   settings: {
     react: {
       version: "detect",
